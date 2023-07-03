@@ -1,0 +1,25 @@
+{
+  "name": "babyssiter_api",
+  "version": "1.0.0",
+  "description": "an api to help keep track of babysitting hours and money",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "knex": "^2.4.2",
+    "md5": "^2.3.0",
+    "moment": "^2.29.4",
+    "mssql": "^9.1.1",
+    "nodemailer": "^6.9.3",
+    "tedious": "^16.1.0",
+    "twilio": "^4.13.0"
+  }
+}
