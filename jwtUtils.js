@@ -26,6 +26,7 @@ function verifyToken(token) {
   }
 }
 
+
 module.exports = {
   signToken,
   verifyToken,

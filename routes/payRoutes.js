@@ -12,6 +12,25 @@ Routes.get("/all", async (req, res, next) => {
   }
 });
 
+Routes.post("/dateFiltered", async (req, res, next) => {
+  console.log(req.body);
+  try {
+    const userId = req.userId;
+    const { type, startDate, endDate } = req.body;
+    const payments = await Controllers.getPaymentsFilteredDate(
+      userId,
+      type,
+      startDate,
+      endDate
+    );
+    res.json(payments);
+  } catch (e) {
+    console.error(e);
+    res.sendStatus(500);
+  }
+});
+
+
 Routes.post("/newPayment", async (req, res, next) => {
   try {
     const userId = req.userId;

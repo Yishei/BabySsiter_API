@@ -5,6 +5,7 @@ const jwtUtils = require("../jwtUtils");
 // POST /login
 Routes.post("/login", async (req, res) => {
   const { username, password } = req.body;
+
   try {
     const userRecord = await lookupUser(username, password);
     if (userRecord && !userRecord.error) {
@@ -31,7 +32,6 @@ Routes.post("/login", async (req, res) => {
     res.status(500).json({ message: "An error occurred during login" });
   }
 });
-
 
 // POST /singup
 Routes.post("/singup", async (req, res, next) => {

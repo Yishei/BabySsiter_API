@@ -12,6 +12,7 @@ function authenticateToken(req, res, next) {
   let status = decodedObj.status;
   if (status === 200) {
     req.userId = decodedObj.decoded.userId;
+    console.log("userId: ", req.userId);
   } else {
     return res.sendStatus(status);
   }

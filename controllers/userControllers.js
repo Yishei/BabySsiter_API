@@ -29,6 +29,8 @@ async function lookupUser(userName, password) {
   }
 }
 
+
+
 async function createUser(userInfo) {
   const { fullName, email, password, phone, rate } = userInfo;
   try {
@@ -66,9 +68,12 @@ async function updateUserInfo(userId, userInfo) {
   });
 }
 
+
+
 async function getUserInfo(userId) {
   return knex.select("*").where("Id", "=", userId).from("Users");
 }
+
 
 async function getUsersRate(userId) {
   return knex("users").select("rate").where("Id", "=", userId);

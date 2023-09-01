@@ -7,7 +7,7 @@ const PayRoutes = require("./routes/payRoutes");
 const userRoutes = require("./routes/userRoutes");
 const VerifyRoute = require("./routes/verifyRoute");
 //const SmsRoutes = require("./routes/smsRoutes");
-const EmailRoutes = require("./routes/emailRoutes");
+const otpRoutes = require("./routes/otpRoutes");
 const NotificationRoutes = require("./routes/notificationRoutes");
 const SettingsRoutes = require("./routes/settingsRoutes");
 const { authenticateToken } = require("./controllers/tokenVerification");
@@ -22,8 +22,8 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/users", userRoutes);
+app.use("/reset", otpRoutes);
 app.use("/verify", VerifyRoute);
-app.use("/email", EmailRoutes);
 //app.use("/sms", SmsRoutes);
 app.use(authenticateToken);
 app.use("/time", TimeRoutes);
